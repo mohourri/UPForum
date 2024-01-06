@@ -1,0 +1,8 @@
+{
+  "tags":
+        [
+          { "tagId": "1", "tagName": "Technology" },
+          { "tagId": "2", "tagName": "Travel" },
+          { "tagId": "3", "tagName": "Food" }
+        ]
+}

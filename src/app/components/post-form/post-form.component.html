@@ -1,0 +1,15 @@
+<form (ngSubmit)="onSubmit()" #postForm="ngForm">
+  <div class="form-group">
+    <label for="title">Title</label>
+    <input type="text" class="form-control" id="title" name="title" [(ngModel)]="post.title" required>
+  </div>
+  <div class="form-group">
+    <label for="content">Content</label>
+    <textarea class="form-control" id="content" name="content" [(ngModel)]="post.content" required></textarea>
+  </div>
+  <div class="form-group">
+    <label for="tagName">Tag Name (separate tags using space)</label>
+    <input type="text" class="form-control" id="tagName" name="tagName" [(ngModel)]="post.tags[0].tagName" required>
+  </div>
+  <button type="submit" class="btn btn-primary">Add Post</button>
+</form>

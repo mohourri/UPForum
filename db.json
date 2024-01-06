@@ -1,0 +1,8 @@
+{
+    "houses": [
+      { "id": 1, "name": "Cozy Cottage", "location": "Country A", "price": 150000 },
+      { "id": 2, "name": "Modern Villa", "location": "Country B", "price": 350000 },
+      { "id": 3, "name": "Beachfront House", "location": "Country C", "price": 500000 }
+    ]
+  }
+  

@@ -1,0 +1,29 @@
+<div class="container">
+    <h2>Latest posts</h2>
+    <div class="list-group">
+      <div *ngFor="let f of currentUser.friends" class="list-group-item p-3"  >
+        <h4>{{ f.username  }} </h4>
+        <ng-container *ngIf="f.posts && f.posts.length > 0; else notexist">
+          
+            <div *ngFor="let p of f.posts" class="list-group-item " >
+              <span><b>{{p.title}}</b></span>
+              <p>{{p.content}}</p>
+              <p>{{p.tags.length}} comments</p>
+              <sup>{{p.timestamp}}</sup>
+              <div>
+                <input class="field" type="text" [(ngModel)]="comment" placeholder="Leave a comment">
+                <button class="btn btn-primary m-2" (click)="handleComment(p)" >
+                  <i class="bi bi-plus "></i> Add
+                </button>
+              </div>
+            </div>
+          
+        </ng-container>
+        <ng-template #notexist>
+          <p><i>this friend has no posts yet !</i></p>
+        </ng-template>
+        
+      </div>
+    </div>
+  </div>
+  

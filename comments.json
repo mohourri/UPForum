@@ -1,0 +1,7 @@
+{
+  "comments":
+      [
+        { "commentId": "101", "content": "Great post!", "timestamp": "2023-12-20" },
+        { "commentId": "102", "content": "Interesting read!", "timestamp": "2023-12-21" }
+      ]
+}

@@ -1,0 +1,40 @@
+<div *ngIf="currentUser">
+  <h1>My Profile</h1>
+  <h3>Personal Infos</h3>
+  <p>User ID: {{ currentUser.id }}</p>
+  <p>Username: {{ currentUser.username }}</p>
+  <p>First Name: {{ currentUser.firstName }}</p>
+  <p>Last Name: {{ currentUser.lastName }}</p>
+  <p>Email: {{ currentUser.email }}</p>
+  <!-- Display other user details as needed -->
+  <h3>My Posts</h3>
+  <button class="btn btn-primary" (click)="navigateToPost()">
+    <i class="bi bi-plus"></i> Add New Post
+  </button>
+  <ng-container *ngIf="currentUser.posts && currentUser.posts.length > 0; else noPosts">
+    <ul class="list-group">
+      <li *ngFor="let p of currentUser.posts" class="list-group-item">
+        <strong><p>{{ p.title }}</p></strong>
+        <p>Content: {{ p.content }}</p>
+        <div>Used tags:
+          <span *ngFor="let tag of p.tags">
+            <p>{{ tag.tagName }}</p>
+          </span>
+        </div>
+        <p>Date: {{ p.timestamp }}</p>
+        <div>
+          <!-- Edit and Delete icons using Bootstrap icons with applied classes -->
+          <span (click)="editPost(p)" class="edit-icon">
+            <i class="bi bi-pencil-square"></i> Edit
+          </span>
+          <span (click)="deletePost(p)" class="delete-icon">
+            <i class="bi bi-trash"></i> Delete
+          </span>
+        </div>
+      </li>
+    </ul>
+  </ng-container>
+  <ng-template #noPosts>
+    <p>No posts available yet.</p>
+  </ng-template>
+</div>

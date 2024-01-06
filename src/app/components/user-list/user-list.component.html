@@ -1,0 +1,18 @@
+<div class="container">
+  <h2>My Friends</h2>
+  <ng-container *ngIf="friends && friends.length > 0; else noFriends">
+    <ul class="list-group">
+      <li *ngFor="let user of friends" class="list-group-item">
+        <h3>{{ user.firstName }} {{ user.lastName }}</h3>
+        <p>Username: {{ user.username }}</p>
+        <p>Email: {{ user.email ? user.email : 'This email is hidden' }}</p>
+        <button class="btn btn-primary m-2" (click)="unfriend(user)" >
+          <i class="bi bi-plus "></i> Unfriend
+        </button>
+      </li>
+    </ul>
+  </ng-container>
+  <ng-template #noFriends>
+    <p>You have no friends yet!</p>
+  </ng-template>
+</div>

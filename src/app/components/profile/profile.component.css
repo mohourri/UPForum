@@ -1,0 +1,12 @@
+/* Styles for edit and delete icons */
+.edit-icon {
+    cursor: pointer;
+    color: blue;
+    margin-right: 10px;
+  }
+  
+  .delete-icon {
+    cursor: pointer;
+    color: red;
+  }
+  
